@@ -5,12 +5,15 @@ var assert	= require("assert");
 var config = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 var client = new weedfs(config);
 
-client.write("./tests/test.jpg", function(err, fileInfo) {
+var buf = new Buffer("testing buffer functionality", "utf8");
+var buf2 = new Buffer("testing an array of buffers", "utf8");
 
-	assert.ifError(err)
+client.write([buf,buf2], function(err, fileInfo) {
 	assert.ok(fileInfo, !null);
 
 	client.remove(fileInfo.fid, function(err, resp, body) {
 		assert.ok(resp.statusCode, 200);
 	});
 });
+
+
