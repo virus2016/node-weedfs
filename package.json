@@ -6,7 +6,7 @@
 			"email":	"aaron@cruzrr.com"
 		}
 	],
-	"name": 	"weed-fs",
+	"name": 	"node-seaweedfs",
 	"description":	"Node.js client for weed-fs, a distributed file store",
 	"homepage":	"https://github.com/cruzrr/node-weedfs",
 	"version":	"0.1.8a",
